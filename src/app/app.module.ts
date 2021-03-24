@@ -10,6 +10,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { HttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]
