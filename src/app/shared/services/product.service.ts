@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export interface Product {
   id: number;
@@ -13,5 +16,15 @@ export interface Product {
 })
 export class ProductService {
 
-  constructor() { }
-}
+  constructor(private http: HttpClient) { }
+
+  getAll(): Observable<Product[]> {
+    return this.http.get<Product[]>('/data/products.json');
+  }
+
+  getById(productId: number): Observable<Product> {
+    return this.http.get<Product[]>('/data/products.json')
+      .pipe(
+        map(products => <Product>products.find(p => p.id === productId))
+      );
+  }
