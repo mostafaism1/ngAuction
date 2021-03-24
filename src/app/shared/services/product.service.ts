@@ -28,3 +28,4 @@ export class ProductService {
         map(products => <Product>products.find(p => p.id === productId))
       );
   }
+}
