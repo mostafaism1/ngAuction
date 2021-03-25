@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductComponent } from './product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductSuggestionComponent } from './product-suggestion/product-suggestion.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -12,7 +13,10 @@ import { ProductSuggestionComponent } from './product-suggestion/product-suggest
   declarations: [ProductComponent, ProductDetailComponent, ProductSuggestionComponent],
   imports: [
     CommonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule.forChild([
+      { path: '', component: ProductComponent }
+    ])
   ]
 })
 export class ProductModule { }
