@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ProductComponent } from './product.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ProductComponent],
   imports: [
     CommonModule,
     FlexLayoutModule
