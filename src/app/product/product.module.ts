@@ -6,6 +6,8 @@ import { ProductComponent } from './product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductSuggestionComponent } from './product-suggestion/product-suggestion.component';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list'
 
 
 
@@ -16,7 +18,9 @@ import { RouterModule } from '@angular/router';
     FlexLayoutModule,
     RouterModule.forChild([
       { path: '', component: ProductComponent }
-    ])
+    ]),
+    MatButtonModule,
+    MatGridListModule
   ]
 })
 export class ProductModule { }
