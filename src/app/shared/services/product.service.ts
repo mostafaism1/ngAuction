@@ -59,8 +59,22 @@ export class ProductService {
       );
   }
 
+  search(params: ProductSearchParams): Observable<Product[]> {
+    return this.http.get<Product[]>('/data/products.json').pipe(
+      map(products => this.filterProducts(products, params))
+    );
+  }
+
   // Populate an array with categories values of each product
   private reduceCategories(products: Product[]): string[] {
     return products.reduce((all, product) => all.concat(product.categories), new Array<string>());
+  }
+
+  // Keep only those product that meet the criteria from search params
+  private filterProducts(products: Product[], params: ProductSearchParams): Product[] {
+    return products
+      .filter(p => params.title ? p.title.toLowerCase().includes((<string>params.title).toLowerCase()) : true)
+      .filter(p => params.minPrice ? p.price >= params.minPrice : true)
+      .filter(p => params.maxPrice ? p.price <= params.maxPrice : true);
   }
 }
