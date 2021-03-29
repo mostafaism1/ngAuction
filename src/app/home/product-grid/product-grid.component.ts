@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -7,7 +7,8 @@ import { Product } from '../../shared/services/product.service';
 @Component({
   selector: 'nga-product-grid',
   templateUrl: './product-grid.component.html',
-  styleUrls: ['./product-grid.component.scss']
+  styleUrls: ['./product-grid.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductGridComponent implements OnInit {
 
