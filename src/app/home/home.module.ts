@@ -7,12 +7,13 @@ import { RouterModule } from '@angular/router';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { MatGridListModule } from '@angular/material/grid-list'
+import { MatGridListModule } from '@angular/material/grid-list';
+import { ProductGridComponent } from './product-grid/product-grid.component'
 
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, ProductGridComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
