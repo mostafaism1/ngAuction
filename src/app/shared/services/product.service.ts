@@ -12,6 +12,12 @@ export interface Product {
   categories: string[];
 }
 
+export interface ProductSearchParams {
+  title?: string;
+  minPrice?: number;
+  maxPrice?: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
