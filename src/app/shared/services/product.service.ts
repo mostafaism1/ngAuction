@@ -36,6 +36,11 @@ export class ProductService {
       );
   }
 
+  getByCategory(category: string): Observable<Product[]> {
+    return this.http.get<Product[]>('/data/products.json').pipe(
+      map(products => products.filter(p => p.categories.includes(category))));
+  }
+
   /**
    *  Return distinct category names
    *  First select all categories and then create a set with unique category names
