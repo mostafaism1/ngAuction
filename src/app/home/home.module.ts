@@ -1,23 +1,19 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { HomeComponent } from './home.component';
-
-import { Route, RouterModule } from '@angular/router';
-
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
+import { Route, RouterModule } from '@angular/router';
+import { CategoriesComponent } from './categories/categories.component';
 import { ProductGridComponent } from './product-grid/product-grid.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
-import { CategoriesComponent } from './categories/categories.component'
 
 
 const routes: Route[] = [
   { path: '', pathMatch: 'full', redirectTo: 'categories' },
   { path: 'search-results', component: SearchResultsComponent },
-  { path: 'categories',
+  {
+    path: 'categories',
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'all' },
       { path: ':category', component: CategoriesComponent },
@@ -26,7 +22,7 @@ const routes: Route[] = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent, ProductGridComponent, SearchResultsComponent, CategoriesComponent],
+  declarations: [ProductGridComponent, SearchResultsComponent, CategoriesComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
