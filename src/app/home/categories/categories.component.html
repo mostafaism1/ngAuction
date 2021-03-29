@@ -1,1 +1,9 @@
-<p>categories works!</p>
+<nav class="tabs" mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let category of categoriesNames$ | async" [routerLink]="['/categories', category]" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+    {{ category | uppercase }}
+  </a>
+</nav>
+
+<div class="grid-list-container">
+    <nga-product-grid [products]="products$ | async"></nga-product-grid>
+</div>
