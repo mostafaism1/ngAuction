@@ -16,6 +16,9 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule
+  ],
+  exports: [
+    SearchFormComponent
   ]
 })
 export class SearchFormModule { }
