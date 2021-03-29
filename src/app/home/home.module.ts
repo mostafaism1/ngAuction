@@ -8,12 +8,13 @@ import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatGridListModule } from '@angular/material/grid-list';
-import { ProductGridComponent } from './product-grid/product-grid.component'
+import { ProductGridComponent } from './product-grid/product-grid.component';
+import { SearchResultsComponent } from './search-results/search-results.component'
 
 
 
 @NgModule({
-  declarations: [HomeComponent, ProductGridComponent],
+  declarations: [HomeComponent, ProductGridComponent, SearchResultsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
