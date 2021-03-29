@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SearchFormComponent } from './search-form.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [SearchFormComponent],
   imports: [
     CommonModule
   ]
